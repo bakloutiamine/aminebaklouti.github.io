@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de développeur Full-stack et Backend.">
+  <title>Amine | Développeur Full-stack</title>
+
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --surface: #12151d;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #8b9cff;
+      --border: #272b36;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1040px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover,
+    .project-link:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 110px 0 100px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 20px 0;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.1;
+      letter-spacing: -3px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .intro {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #0b0d12;
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 65px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--surface);
+      color: #d1d5db;
+      font-size: 0.9rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    .project h3 {
+      margin: 12px 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      margin-top: 18px;
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    .contact {
+      padding-bottom: 90px;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#">amine<span>.</span>dev</a>
+
+      <div class="nav-links">
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="about">
+      <p class="eyebrow">Développeur Full-stack / Backend</p>
+
+      <h1>
+        Je conçois des applications
+        <span>robustes et évolutives.</span>
+      </h1>
+
+      <p class="intro">
+        Ingénieur passionné par le développement logiciel,
+        je construis des applications web performantes,
+        des API fiables et des architectures maintenables.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="#projects">
+          Découvrir mes projets
+        </a>
+        <a class="button" href="#contact">
+          Me contacter
+        </a>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">Stack technique</h2>
+      <p class="section-description">
+        Les technologies que j'utilise dans mes projets.
+      </p>
+
+      <div class="skills">
+        <span class="skill">PHP</span>
+        <span class="skill">Symfony</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">React</span>
+        <span class="skill">Next.js</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Git</span>
+        <span class="skill">REST API</span>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <h2 class="section-title">Projets sélectionnés</h2>
+      <p class="section-description">
+        Quelques exemples de projets à présenter dans ton portfolio.
+      </p>
+
+      <div class="projects">
+        <article class="project">
+          <span class="project-number">PROJET 01</span>
+          <h3>API de gestion</h3>
+          <p>
+            API REST conçue avec Symfony, avec validation des données,
+            authentification et gestion des erreurs.
+          </p>
+          <div class="tags">Symfony · PHP · PostgreSQL</div>
+          <a class="project-link" href="https://github.com/"
+             target="_blank" rel="noopener noreferrer">
+            Voir le code →
+          </a>
+        </article>
+
+        <article class="project">
+          <span class="project-number">PROJET 02</span>
+          <h3>Application web</h3>
+          <p>
+            Interface web responsive avec composants réutilisables,
+            gestion des états et intégration d'une API.
+          </p>
+          <div class="tags">React · TypeScript · REST API</div>
+          <a class="project-link" href="https://github.com/"
+             target="_blank" rel="noopener noreferrer">
+            Voir le code →
+          </a>
+        </article>
+
+        <article class="project">
+          <span class="project-number">PROJET 03</span>
+          <h3>Application e-commerce</h3>
+          <p>
+            Application orientée métier avec gestion du catalogue,
+            des utilisateurs et des commandes.
+          </p>
+          <div class="tags">PHP · SQL · JavaScript</div>
+          <a class="project-link" href="https://github.com/"
+             target="_blank" rel="noopener noreferrer">
+            Voir le code →
+          </a>
+        </article>
+
+        <article class="project">
+          <span class="project-number">PROJET 04</span>
+          <h3>Infrastructure Docker</h3>
+          <p>
+            Environnement de développement reproductible,
+            configuration des services et automatisation.
+          </p>
+          <div class="tags">Docker · Linux · CI/CD</div>
+          <a class="project-link" href="https://github.com/"
+             target="_blank" rel="noopener noreferrer">
+            Voir le code →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container contact" id="contact">
+      <p class="eyebrow">Une opportunité ?</p>
+      <h2 class="section-title">Travaillons ensemble.</h2>
+      <p class="section-description">
+        Tu recrutes un développeur ou souhaites échanger sur un projet ?
+      </p>
+
+      <div class="actions">
+        <!-- Remplace cette adresse par ton adresse e-mail -->
+        <a class="button primary"
+           href="mailto:ton-email@example.com">
+          Envoyer un e-mail
+        </a>
+
+        <!-- Remplace ces liens par tes profils -->
+        <a class="button" href="https://github.com/"
+           target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a class="button" href="https://www.linkedin.com/"
+           target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> Amine. Tous droits réservés.</span>
+      <span>Conçu avec HTML & CSS.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
